@@ -14,6 +14,7 @@ var petOne = {
     this.age = randomAge(3, 12) + 'Months';
   }
 };
+petOne.setAge();
 
 var petTwo = {
   name: 'tom',
@@ -28,6 +29,7 @@ var petTwo = {
     this.age = randomAge(3, 12) + 'Months';
   }
 };
+petTwo.setAge();
 
 function randomAge(min, max) {
   return Math.floor(Math.random()* (max-min+1)+min);
@@ -41,36 +43,40 @@ petTwo.isFixed = true;
 
 // create a new element the parent of the child element that we will create to render the pet article in the HTML
 
-var parentElement = document.getElementById('kitttenProfiles');
+var parentElement = document.getElementById('kitten-profiles');
 
 // Create article
 var article = document.createElement('article');
+console.log(article);
 parentElement.appendChild(article);
 
-// Create h2
+// // Create h2
 var h2 = document.createElement('h2');
+h2.textContent = 'Please, adopt me! I\'m' + petOne.name;
 article.appendChild(h2);
 
-// create <p>
+// // create <p>
 var petParagraph = document.createElement('p');
 petParagraph.textContent = 'Cats are adorable, and this cat is ' + petOne.age + ' old';
-article.appendChild(petParagraph); 
+article.appendChild(petParagraph);
 
-// create a <ul>
+// // create a <ul>
 var petUl = document.createElement('ul');
 article.appendChild(petUl);
 
-for (var i = 0; i <petOneOne.interests; i ++) {
+for (var i = 0; i <petOne.interests.length; i ++) {
 
-// create <li>
-var petLi = document.createElement('li');
+//   // create <li>
+  var petLi = document.createElement('li');
 
-// fill in the list
-petLi.textContent = petOne.interests[i];
-petUl.appendChild(petLi);
-// add an image
+  // fill in the list
+  petLi.textContent = petOne.interests[i];
+  petUl.appendChild(petLi);
+}
+// // add an image
 var petImage = document.createElement('img');
 petImage.setAttribute('src', 'images/' + petOne.imageName + '.jpg');
-petImage.setAttribute('alt="cute space kitten"');
+petImage.setAttribute('alt', 'cute space kitten');
+article.appendChild(petImage);
 
 // set some values on the images
