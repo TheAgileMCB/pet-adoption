@@ -1,0 +1,17 @@
+body {
+  background: linear-gradient(to bottom right, rgba(29, 144,12,1), rgba(133, 255, 90, .6));
+}
+h1, h2 {
+  font-size: 5em;
+  text-align: center;
+  color: red;
+  text-shadow:
+		-1px -1px 0 #FFFFFF,
+		1px -1px 0 #FFFFFF,
+		-1px 1px 0 #FFFFFF,
+		1px 1px 0 #FFFFFF 
+
+}
+h2 {
+  font-size: 3em;
+}
