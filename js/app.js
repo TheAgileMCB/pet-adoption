@@ -38,9 +38,9 @@ function randomAge(min, max) {
   return Math.floor(Math.random() * (max - min +1) + min);
 }
 
-Pet.prototype.getInterests = function(){
+Pet.prototype.getInterests = function() {
   var randomIndex = Math.floor(Math.random() * this.interests.length);
-  return this.interest[randomIndex];
+  return this.interests[randomIndex];
 };
 
 
@@ -74,6 +74,32 @@ Pet.prototype.render = function() {
   img.setAttribute('src', 'images/' + this.imageName + '.jpg');
   img.setAttribute('alt', 'Adopt ' + this.name + 'NOW!');
   article.appendChild(img);
+
+
+  var animalTable = document.getElementById('animal-table');
+
+  var petRow = document.createElement('tr');
+
+  var nameCell = document.createElement('td');
+  nameCell.textContent = this.name;
+  petRow.appendChild(nameCell);
+
+  var breedCell = document.createElement('td');
+  breedCell.textContent = this.breed;
+  petRow.appendChild(breedCell);
+
+  var ageCell = document.createElement('td');
+  ageCell.textContent = this.age;
+  petRow.appendChild(ageCell);
+
+  var interestsCell = document.createElement('td');
+  interestsCell.textContent = this.getInterests();
+  petRow.appendChild(interestsCell);
+
+  animalTable.appendChild(petRow);
+
+
+
 };
 
 var firstPet = new Pet('Nova', 'Lab', 'pet3', ['chew toys', 'cats', 'sticks', 'children'], true, true, true);

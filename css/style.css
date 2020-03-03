@@ -45,3 +45,18 @@ p {
 li {
   padding: 10px;
 }
+
+table {
+  border: 4px double red;
+  text-align: center;
+  margin: 0 auto;
+
+}
+th {
+  border-bottom: 4px double red;
+  padding: 10px;
+}
+td {
+  border: 1px solid white;
+  padding: 10px;
+}
