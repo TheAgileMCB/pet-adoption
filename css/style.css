@@ -18,7 +18,30 @@ h1, h2 {
 }
 h2 {
   font-size: 3em;
+  margin-bottom: 30px;
+}
+
+header h2 {
+  margin-bottom: 50px;
 }
 img {
   max-width: 200px;
+  margin-top: 20px;
+}
+
+article {
+  float:left;
+  width: 30%;
+  height: 700px;
+  border: double 4px white;
+  margin: 10px;
+  padding: 6px;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+li {
+  padding: 10px;
 }
