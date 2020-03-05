@@ -1,5 +1,8 @@
+* {
+  box-sizing: border-box;
+}
 body {
-  background: linear-gradient(to bottom right, rgba(29, 144,12,1), rgba(133, 255, 90, .6));
+  background: linear-gradient(to bottom right, rgb(166, 198, 199), rgba(166, 199, 241, 0.849));
   color: #FFFFFF;
   font-size: 1.5em;
   text-align: center;
@@ -8,7 +11,7 @@ body {
 h1, h2 {
   font-size: 5em;
   text-align: center;
-  color: red;
+  color: rgb(47, 78, 126);
   text-shadow:
 		-1px -1px 0 #FFFFFF,
 		1px -1px 0 #FFFFFF,
@@ -33,7 +36,9 @@ article {
   float:left;
   width: 30%;
   height: 700px;
-  border: double 4px white;
+  border: double 6px white;
+  border-radius: 10px;
+  background: linear-gradient(to bottom right, rgb(153, 153, 160), rgb(187, 187, 190), rgb(153, 153, 160));
   margin: 10px;
   padding: 6px;
 }
@@ -47,16 +52,54 @@ li {
 }
 
 table {
-  border: 4px double red;
+  border: 4px double white;
   text-align: center;
-  margin: 0 auto;
+  margin: 40px auto 40px;
+  background: linear-gradient(to bottom right, rgb(153, 153, 160), rgb(187, 187, 190), rgb(153, 153, 160));
+  font-size: 2rem;
+}
 
-}
 th {
-  border-bottom: 4px double red;
-  padding: 10px;
+  border-bottom: 4px double white;
+  padding: 20px;
 }
+
 td {
   border: 1px solid white;
-  padding: 10px;
+  padding: 20px;
 }
+
+form {
+  background: linear-gradient(to bottom right, rgb(153, 153, 160), rgb(187, 187, 190), rgb(153, 153, 160));
+  font-size: 1.5rem;
+  border: 4px double white;
+  margin: 30px;
+  border-radius: 10px;
+}
+
+legend {
+  font-size: 2em;
+  text-align: center;
+  color: rgb(47, 78, 126);
+  margin-bottom: 10px;
+  text-shadow:
+		-1px -1px 0 #FFFFFF,
+		1px -1px 0 #FFFFFF,
+		-1px 1px 0 #FFFFFF,
+		1px 1px 0 #FFFFFF 
+}
+
+form fieldset {
+  display: block;
+  margin: 10px;
+}
+
+button {
+  color: #fff;
+  background-color: rgb(47, 78, 126);
+  font-size: 1rem;
+}
+
+form span {
+  font-size: .5rem;
+} 

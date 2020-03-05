@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
   <link rel="stylesheet" href="css/style.css">
 
 </head>
+
 <body>
   <header>
     <h1>Interplanetary Humanitarian</h1>
@@ -32,8 +34,35 @@
           <th>Interests</th>
         </thead>
       </tr>
-      
+
     </table>
+
+    <form id='new-pets'>
+      <fieldset>
+        <legend>Add a new animal to our ranks</legend>
+        <label for="name">Name</label>
+        <input id="name" type="text" required />
+        <label for="breed">Breed</label>
+        <input id="breed" type="text" required />
+        <label for="imageName">Image Name</label>
+        <input id="imageName" type="text" required />
+        <label for="interests">Interests</label>
+        <input id="interests" type="text" required />
+      </fieldset>
+
+      <fieldset>
+        <label>Kids</label>
+        <input id="kids" name="isGoodWithKids" type="checkbox" />
+        <label>Dogs</label>
+        <input id="kids" name="isGoodWithDogs" type="checkbox" />
+        <label>Cats</label>
+        <input id="kids" name="isGoodWithCats" type="checkbox" />
+      </fieldset>
+
+      <button type="reset" value="Reset">Try Again</button>
+
+      <button>Click to Submit! (<span>you and</span> your Earth animal to our glorious overlord)</button>
+    </form>
 
   </main>
   <footer>
@@ -41,4 +70,5 @@
   </footer>
   <script src="js/app.js"></script>
 </body>
+
 </html>

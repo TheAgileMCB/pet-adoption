@@ -26,8 +26,10 @@ function Pet(name, breed, imageName, interests, isGoodWithKids, isGoodWithDogs, 
   this.isGoodWithKids = isGoodWithKids;
   this.isGoodWithDogs = isGoodWithDogs;
   this.isGoodWithCats = isGoodWithCats;
+  Pet.allPets.push(this);
 }
 
+Pet.allPets = [];
 // Pet.prototype.functionName = function(parameter1, parameter2, parameter3, etc.)
 // now, any pet created within Pet constructor will be able to call this method
 Pet.prototype.setAge = function() {
@@ -118,52 +120,37 @@ for(let i = 0 ; i < adoptPet.length; i++){
   adoptPet[i].render();
 }
 
-// function randomAge(min, max) {
-//   return Math.floor(Math.random()* (max-min+1)+min);
-// }
 
-// petOne.isFixed = true;
-// petTwo.isFixed = true;
+//take in an event parameter so that we can prevent the default
+function handleFormSubmitted(event){
+  event.preventDefault();
+  console.log(event);
+  var nameInput = document.getElementById('name');
+  var nameValue = nameInput['value'];
+  var breedInput = document.getElementById('breed');
+  var breedValue = breedInput['value'];
+  var imageInput = document.getElementById('imageName');
+  var imageValue = imageInput.value;
+  var interestsInput = document.getElementById('interests');
+  var interestsValue = interestsInput.value;
 
+  var isGoodWithKids = event.target.isGoodWithKids.checked;
+  var isGoodWithDogs = event.target.isGoodWithDogs.checked;
+  var isGoodWithCats = event.target.isGoodWithCats.checked;
 
-// create a DOM element and render it in HTML
+  var newPet = new Pet(nameValue, breedValue, imageValue, interestsValue, isGoodWithKids, isGoodWithDogs, isGoodWithCats);
 
-// create a new element the parent of the child element that we will create to render the pet article in the HTML
+  newPet.setAge();
+  newPet.getInterests();
+  newPet.render();
+}
 
-// var parentElement = document.getElementById('kitten-profiles');
+//Set up the event listener to listen to the submit event
+// 1. which element do we need
+var formElement = document.getElementById('new-pets');
+form.reset();
 
-// // Create article
-// var article = document.createElement('article');
-// console.log(article);
-// parentElement.appendChild(article);
+// 2. which event am I listening for?
 
-// // // Create h2
-// var h2 = document.createElement('h2');
-// h2.textContent = 'Please, adopt me! I\'m' + petOne.name;
-// article.appendChild(h2);
-
-// // // create <p>
-// var petParagraph = document.createElement('p');
-// petParagraph.textContent = 'Cats are adorable, and this cat is ' + petOne.age + ' old';
-// article.appendChild(petParagraph);
-
-// // // create a <ul>
-// var petUl = document.createElement('ul');
-// article.appendChild(petUl);
-
-// for (var i = 0; i <petOne.interests.length; i ++) {
-
-//   // create <li>
-//   var petLi = document.createElement('li');
-
-//   // fill in the list
-//   petLi.textContent = petOne.interests[i];
-//   petUl.appendChild(petLi);
-// }
-// // add an image
-// var petImage = document.createElement('img');
-// petImage.setAttribute('src', 'images/' + petOne.imageName + '.jpg');
-// petImage.setAttribute('alt', 'cute space kitten');
-// article.appendChild(petImage);
-
-// set some values on the images
+// 3. what code should i run when that event happens?
+formElement.addEventListener('submit', handleFormSubmitted);
